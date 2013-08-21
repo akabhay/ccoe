@@ -14,12 +14,29 @@
 <div class="container">
 	<div data-ng-controller="DemoController">
 
-		<h1>Welcome to the Canon COE demo</h1>
+		<h1>Canon CoE</h1>
 
 		<!-- Navigation View -->
 		<div class="row">
-			<div class="span2">	<div  class="well">
-				<ul class="nav nav-list">
+			<div class="span2">	
+			
+			
+			
+			<div  class="well navbar navbar-inverse">
+			<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  
+		  
+		  
+		  
+		  
+		  
+		<div class="nav-collapse">
+				<ul class="nav nav-list" id="myTab">
+				
 					<li data-ng-repeat="level in levels">{{level.name}}
 
 						<div ng-if="level.pages.length>0">
@@ -28,11 +45,14 @@
 								<li data-ng-repeat="page in level.pages"><a href="#/pages/{{ level.id }}/{{ page.id }}">{{ page.name }}</a>
 							</ul>
 						</div>
-						<div ng-if="level.pages.length == 0"><span class="label label-info">Coming Soon...</span></div>
+						<div ng-if="level.pages.length == 0"><span class="label">Coming Soon...</span></div>
 					</li>
+					
 				</ul>
-				<br/>
-				<a href="#/home/">Back to Home</a>
+				
+					<a href="#/home/">Back to Home</a>
+				</div>
+			
 			</div>
 		</div>
 
@@ -41,6 +61,11 @@
 
 	</div>
 
+	<footer class="footer">
+		<div class="container">
+		<p>Crafted by Xebia India</p>
+		</div>
+	</footer>
 	<!-- Angular.js -->
 	<script src="js/angular.min.js"></script>
 	
