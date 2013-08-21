@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Xebia: Canon CoE Demo</title>
-<link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
-<link rel="stylesheet" href="css/customise.css"  media="screen">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
+<link rel="stylesheet" href="css/customise.min.css"  media="screen">
 <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
@@ -19,9 +19,6 @@
 		<!-- Navigation View -->
 		<div class="row">
 			<div class="span2">	
-			
-			
-			
 			<div  class="well navbar navbar-inverse">
 			<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
@@ -35,17 +32,16 @@
 		  
 		  
 		<div class="nav-collapse">
-				<ul class="nav nav-list" id="myTab">
+				<ul class="nav nav-list " id="myTab">
 				
-					<li data-ng-repeat="level in levels">{{level.name}}
+					<li data-ng-repeat="level in levels"><div class="nav-header">{{level.name}}</div>
 
 						<div ng-if="level.pages.length>0">
-							<ul>
-								<!--<li data-ng-repeat="page in level.pages"><a href="#/{{ page.url }}">{{ page.name }}</a>-->
+							<ul class="unstyled">
 								<li data-ng-repeat="page in level.pages"><a href="#/pages/{{ level.id }}/{{ page.id }}">{{ page.name }}</a>
 							</ul>
 						</div>
-						<div ng-if="level.pages.length == 0"><span class="label">Coming Soon...</span></div>
+						<div ng-if="level.pages.length == 0" class="muted"><em>Coming Soon...</em></div>
 					</li>
 					
 				</ul>
@@ -61,11 +57,10 @@
 
 	</div>
 
-	<footer class="footer">
-		<div class="container">
-		<p>Crafted by Xebia India</p>
-		</div>
+<footer class="footer">
+		<p>Crafted by Xebia &copy; 2013. All rights reserved.</p>
 	</footer>
+</div>
 	<!-- Angular.js -->
 	<script src="js/angular.min.js"></script>
 	
@@ -75,7 +70,7 @@
 
 	<script src="http://code.jquery.com/jquery.min.js"></script> 
 	<script src="js/bootstrap.min.js"></script> 
-	<script src="js/customise.js"></script>
+	
 
 
 

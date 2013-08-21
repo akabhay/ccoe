@@ -100,7 +100,11 @@ div.text-right{text-align:left;}
 
 .rounded-box{margin-bottom:10px;}
 }
-.nrp{padding-left:178px;}
+
+ }
+
+
+.nrp{padding-left:78px;}
 
 .fluorescent-green,.pigment-green,.yellow-green{color:#000;border:1px #000 solid;
 float:left;
@@ -132,4 +136,23 @@ background-color:#91b912;
 	border-bottom: 15px solid transparent;
 	border-left: 15px solid #000;
 }
+
+.footer {
+text-align: center;
+padding: 30px 0;
+margin-top: 70px;
+border-top: 1px solid #e5e5e5;
+background-color: #f5f5f5;}
+
+
+
+
+
+
+
+
+
+
+
+
 
