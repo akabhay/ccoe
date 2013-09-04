@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
 <link rel="stylesheet" href="css/customise.min.css"  media="screen">
+<link rel="stylesheet" href="css/app.css"  media="screen">
+<link rel="stylesheet" href="css/flexslider.css"  media="screen">
 <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
@@ -13,9 +15,7 @@
 <body>
 <div class="container">
 	<div data-ng-controller="DemoController">
-
 		<h1>Canon CoE</h1>
-
 		<!-- Navigation View -->
 		<div class="row">
 			<div class="span2">	
@@ -24,18 +24,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-		  
-		  
-		  
-		  
-		  
+          	</button>
 		  
 		<div class="nav-collapse">
 				<ul class="nav nav-list " id="myTab">
-				
 					<li data-ng-repeat="level in levels"><div class="nav-header">{{level.name}}</div>
-
 						<div ng-if="level.pages.length>0">
 							<ul class="unstyled">
 								<li data-ng-repeat="page in level.pages"><a href="#/pages/{{ level.id }}/{{ page.id }}">{{ page.name }}</a>
@@ -45,34 +38,29 @@
 					</li>
 					
 				</ul>
-				
-					<a href="#/home/">Back to Home</a>
+				<a href="#/home/">Back to Home</a>
 				</div>
-			
 			</div>
 		</div>
-
 		<!-- Placeholder for pages to display -->
 		<div data-ng-view="" class="span10"></div>
-
 	</div>
-
 <footer class="footer">
 		<p>Crafted by Xebia &copy; 2013. All rights reserved.</p>
 	</footer>
 </div>
-	<!-- Angular.js -->
-	<script src="js/angular.min.js"></script>
-	
-	<script src="app/app.js"></script>
-    <script src="app/controllers.js"></script>
-    <script src="app/services.js"></script>
 
-	<script src="http://code.jquery.com/jquery.min.js"></script> 
-	<script src="js/bootstrap.min.js"></script> 
-	
+<script src="http://code.jquery.com/jquery.min.js"></script> 
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<!-- Angular.js -->
+<script src="js/angular.min.js"></script>
 
-
+<script src="app/app.js"></script>
+<script src="app/controllers.js"></script>
+<script src="app/services.js"></script>
+<script src="js/bootstrap.min.js"></script> 
 
 </body>
 </html>

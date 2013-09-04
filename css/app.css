@@ -1,0 +1,30 @@
+.navbar .nav>li{ float: none; }
+
+.question{ 
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+border: solid 2px #990000;
+padding: 8px;
+min-height: 120px;
+position: relative;
+margin-top: 40px;
+margin: 0px 10px;
+background-color: #DDD;
+box-shadow: 2px 2px 4px #CCC;
+}
+.answer, .answerChoice{
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+.answer{ display: block; height: 44px; background-color: #990000; top: 10px; left: 10px; box-shadow: 2px 2px 4px #CCC; margin-bottom: 6px;}
+.answerChoice{ width: 68px; min-height: 32px; border: solid 2px #990000; font-size: 90%; line-height: normal; padding: 4px; background-color: #DDD; margin-bottom:10px; cursor: pointer;}
+.dropped{ width: 100%; width: 88%; top: 8px !important; left: 8px !important; border-color: #990000 !important;}
+
+#answersList, #answersSubmit, #answersButtons{ margin-top: 20px; position: relative;}
+.question .answerChoice{ position: absolute; z-index: 99; top: 8px; left: 8px; width: 88%; border-color: green;}
+#answersList{ padding: 0px 0px 0px 10px; margin: 0px auto; display: table;}
+#answersList li{ list-style: none; float: left; display: inline; margin-right: 10px;}
+.correct{ background-color: #d6e9c6; border-color: green; }
+.correct .dropped{ border-color: green !important;}
