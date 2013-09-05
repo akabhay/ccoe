@@ -69,22 +69,34 @@ jQuery(function(){
     }
   });
   jQuery('.answerChoice').draggable({
-        revert : function(event, ui) {
-            $(this).data("uiDraggable").originalPosition = {
-                top : 0,
-                left : 0
-            };
-            // return boolean
-            return !event;
-            // return event !== false ? false : true;
-        }
-    });
+      revert : function(event, ui) {
+          $(this).data("uiDraggable").originalPosition = {
+              top : 0,
+              left : 0
+          };
+          // return boolean
+          return !event;
+          // return event !== false ? false : true;
+      },
+      start: function(e, ui){
+          $(this).hide();
+          $(ui.helper).addClass('elHoverClass');
+      },
+      stop: function(e, ui){
+          $(this).show();
+          $(ui.helper).removeClass('elHoverClass');
+      },
+      appendTo: 'body',
+      scroll: false,
+      helper: 'clone',
+      cursor: "move"
+  });
   var correctCount = 0;
   $(".answer").droppable({
     drop: function(event, ui) {
-      ui.draggable.css('position', 'absolute').appendTo($(this));
+      ui.draggable.appendTo($(this));
+      ui.draggable.css('width', '95%');
       ui.draggable.addClass('dropped');
-
       if($(".answer .dropped").length == answerList.length){ // All Droppped
         jQuery("#answersButtons").hide();
         jQuery("#answersSubmit").show();
@@ -93,18 +105,19 @@ jQuery(function(){
     }
   });
 
-  /*$("#answersList").droppable({
+  $("#answersList ").droppable({
     drop: function(event, ui) {
-      ui.draggable.css('position', 'static').appendTo($(this));
+      ui.draggable.removeAttr('style').prependTo($(this));
+      ui.draggable.wrap('<li>');
       ui.draggable.removeClass('dropped');
+      $('#answersList li:empty').remove();
 
-      if($(".answer .dropped").length == $(".answer").length){ // All Droppped
-        // Show correct answer button
-        jQuery("#answersList").show();
+      if($(".answer .dropped").length != $(".answer").length){ // All Droppped
+        jQuery("#answersButtons").hide();
         jQuery("#answersSubmit").hide();
       }
     }
-  });*/
+  });
 
   showCorrectAnswers = function(){
     answerList.each(function(i){
@@ -118,6 +131,7 @@ jQuery(function(){
   }
 
   $("#submitAnsBtn").click(function(){
+    jQuery('.answerChoice').draggable('disable');
     answerList.each(function(p){
       if($(this).children('div').html() == $(".slides > li").eq(p).find(".dropped").html()){
         $(".slides > li").eq(p).children("div").addClass("correct");
