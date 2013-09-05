@@ -1,0 +1,158 @@
+<p>Here is an exercise to check our understanding of the lesson.</p>
+<p>Drag the name of the parts  LFP-IJ printer in the accordance to their function</p>
+
+<section class="slider">
+  <div class="flexslider">
+    <ul class="slides row">
+      <li>
+        <div class="question"><span class="answer"></span>Functions as an air passage to fill the ink tank.</div>
+      </li>
+      <li>
+        <div class="question"><span class="answer"></span>A PCB that controls printer as a whole.</div>
+      </li>
+      <li>
+        <div class="question"><span class="answer"></span>Connects the carriage and the main controller with each other by a flat cable.</div>
+      </li>
+      <li>
+        <div class="question"><span class="answer"></span>A film on which slits are printed to generate an encoder pulse signal.</div>
+      </li>
+      <li>
+        <div class="question"><span class="answer"></span>Relays the head signals and performs pre-processing on the multi sensor signals.</div>
+      </li>
+      <li>
+        <div class="question"><span class="answer"></span>A head recovering unit that sucks the head to restore the clogged nozzles.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+<ul id="answersList">
+  <li><div class="answerChoice">Sub-buffer</div></li>
+  <li><div class="answerChoice">Main Controller</div></li>
+  <li><div class="answerChoice">Carriage Relay PCB</div></li>
+  <li><div class="answerChoice">Carriage Encoder</div></li>
+  <li><div class="answerChoice">Head Relay PCB</div></li>
+  <li><div class="answerChoice">Purge Unit</div></li>
+</ul>
+<div class="row hide" id="answersSubmit">
+  <div class="span10 text-center">
+    <input type="button" name="" value="Submit" id="submitAnsBtn" class="btn btn-success">
+  </div>
+</div>
+<div class="alert alert-info hide" id="result"> <a class="close" data-dismiss="alert">×</a>  
+  <span></span>
+</div> 
+<div class="row hide" id="answersButtons">
+  <div class="span10 text-center">
+    <input type="button" name="" value="Correct Answer" id="correctAnsBtn" class="btn btn-success">
+    <input type="button" name="" value="Your Answer" id="yourAnsBtn" class="btn btn-primary">
+  </div>
+</div>
+
+<script type="text/javascript">
+(function(d){d.fn.shuffle=function(c){c=[];return this.each(function(){c.push(d(this).clone(true))}).each(function(a,b){d(b).replaceWith(c[a=Math.floor(Math.random()*c.length)]);c.splice(a,1)})};d.shuffle=function(a){return d(a).shuffle()}})(jQuery);
+
+jQuery(function(){
+  var answerList = $("#answersList > li").clone(true);
+  jQuery.shuffle("#answersList > li");
+
+  // Slider
+  jQuery('.flexslider').flexslider({
+    animation: "slide",
+    prevText: "",
+    minItems: 1,
+    maxItems: 4,
+    nextText: "",
+    itemWidth: 210,
+    slideshow: false,
+    start: function(slider){
+      jQuery('body').removeClass('loading');
+    }
+  });
+  jQuery('.answerChoice').draggable({
+      revert : function(event, ui) {
+          $(this).data("uiDraggable").originalPosition = {
+              top : 0,
+              left : 0
+          };
+          // return boolean
+          return !event;
+          // return event !== false ? false : true;
+      },
+      start: function(e, ui){
+          $(this).hide();
+          $(ui.helper).addClass('elHoverClass');
+      },
+      stop: function(e, ui){
+          $(this).show();
+          $(ui.helper).removeClass('elHoverClass');
+      },
+      appendTo: 'body',
+      scroll: false,
+      helper: 'clone',
+      cursor: "move"
+  });
+  var correctCount = 0;
+  $(".answer").droppable({
+    drop: function(event, ui) {
+      ui.draggable.appendTo($(this));
+      ui.draggable.css('width', '95%');
+      ui.draggable.addClass('dropped');
+      if($(".answer .dropped").length == answerList.length){ // All Droppped
+        jQuery("#answersButtons").hide();
+        jQuery("#answersSubmit").show();
+      }else{
+      }
+    }
+  });
+
+  $("#answersList ").droppable({
+    drop: function(event, ui) {
+      ui.draggable.removeAttr('style').prependTo($(this));
+      ui.draggable.wrap('<li>');
+      ui.draggable.removeClass('dropped');
+      $('#answersList li:empty').remove();
+
+      if($(".answer .dropped").length != $(".answer").length){ // All Droppped
+        jQuery("#answersButtons").hide();
+        jQuery("#answersSubmit").hide();
+      }
+    }
+  });
+
+  showCorrectAnswers = function(){
+    answerList.each(function(i){
+      var ans=$(this).html();
+      $(".slides > li").eq(i).children("div").append(ans);
+      i++;
+    })    
+  }
+  hideCorrectAnswers = function(){
+    $(".question > .answerChoice").remove();
+  }
+
+  $("#submitAnsBtn").click(function(){
+    jQuery('.answerChoice').draggable('disable');
+    answerList.each(function(p){
+      if($(this).children('div').html() == $(".slides > li").eq(p).find(".dropped").html()){
+        $(".slides > li").eq(p).children("div").addClass("correct");
+        correctCount++;
+      }
+      p++
+    });
+    jQuery("#answersSubmit").hide();
+    jQuery("#answersButtons").show();
+    var msg="You answered <strong>"+(correctCount)+"</strong> out of <strong>"+(answerList.length)+"</strong> questions correctly.";
+    $("#result span").html(msg)
+    jQuery("#result").show();
+  });
+
+  $("#correctAnsBtn").click(function(){
+    hideCorrectAnswers();
+    showCorrectAnswers();
+  })
+
+  $("#yourAnsBtn").click(function(){
+    hideCorrectAnswers();
+  })
+})
+</script>
