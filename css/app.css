@@ -31,3 +31,6 @@ box-shadow: 2px 2px 4px #CCC;
 .correct .dropped{ border-color: green !important;}
 .hoverClass{ border: dotted 1px #C09849; background-color: #fcf8e3;}
 .elHoverClass{ width: auto !important;}
+
+#L2S4 #anim2Link{ position: absolute;}
+#L2S4 .span4{ position: relative; }

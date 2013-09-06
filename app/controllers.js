@@ -9,23 +9,6 @@ demoApp.controller('DemoController', function ($scope, demoService) {
 	}
 });
 
-/*
-demoApp.controller('level2-2', ['$scope', function($scope) {
-	$scope.timeInMs = "Playing Animation";
-    $scope.step2 = function($scope, $timeout){
-    	alert("ss")
-        $timeout(function() {alert("aa");},3000);
-    }
-    $scope.step2();
-}]);*/
-demoApp.directive('eatClick', function() {
-    return function(scope, element, attrs) {
-        $(element).click(function(event) {
-            event.preventDefault();
-        });
-    }
-})
-
 function animation($scope,$timeout) {
 	$scope.anim1Start = function(){
         //alert("Animation Start")
@@ -44,5 +27,22 @@ function animation($scope,$timeout) {
 		jQuery("#anim2").append("<img src='img/anim2.gif?p"+new Date().getTime()+"'/>");
     	jQuery("#anim2").show();
         //$timeout.cancel(mytimeout);
+    }         
+}
+
+function animation2($scope,$timeout) {
+	$scope.anim1Start = function(){
+    	jQuery("#anim1").append("<img src='img/anim1.gif?p"+new Date().getTime()+"'/>");
+    	$timeout($scope.anim1Over, 20000);
+    }
+    $scope.anim1Over = function(){
+    	jQuery("#anim2Link").show();
+    }
+    $timeout($scope.anim1Start, 2000); // start animation after 5 seconds
+    
+    $scope.anim2Link = function(){
+    	jQuery("#anim2Link").hide();
+		jQuery("#anim2").append("<img src='img/anim2.gif?p"+new Date().getTime()+"'/>");
+    	jQuery("#anim2").show();
     }         
 }
