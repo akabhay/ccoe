@@ -14,7 +14,7 @@ function animation($scope,$timeout) {
         //alert("Animation Start")
     	//jQuery("#anim1").attr("src","http://placehold.it/500x207/ffffff/ffffff/");
     	jQuery("#anim1").append("<img src='img/anim1.gif?p"+new Date().getTime()+"'/>");
-    	$timeout($scope.anim1Over, 20000);
+    	$timeout($scope.anim1Over, 4000);
     }
     $scope.anim1Over = function(){
     	jQuery("#anim2Link").show();
@@ -33,7 +33,7 @@ function animation($scope,$timeout) {
 function animation2($scope,$timeout) {
 	$scope.anim1Start = function(){
     	jQuery("#anim1").append("<img src='img/anim1.gif?p"+new Date().getTime()+"'/>");
-    	$timeout($scope.anim1Over, 20000);
+    	$timeout($scope.anim1Over, 4000);
     }
     $scope.anim1Over = function(){
     	jQuery("#anim2Link").show();
