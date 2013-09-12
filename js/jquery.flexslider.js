@@ -1041,7 +1041,7 @@
     animationLoop: true,            //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
     smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
     startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
-    slideshow: true,                //Boolean: Animate slider automatically
+    slideshow: false,                //Boolean: Animate slider automatically
     slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
     animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
     initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
@@ -1077,10 +1077,10 @@
     asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
 
     // Carousel Options
-    itemWidth: 0,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
+    itemWidth: 210,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
     itemMargin: 0,                  //{NEW} Integer: Margin between carousel items.
     minItems: 1,                    //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
-    maxItems: 0,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+    maxItems: 4,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
     move: 0,                        //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
     allowOneSlide: true,           //{NEW} Boolean: Whether or not to allow a slider comprised of a single slide
 

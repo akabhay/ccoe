@@ -5,7 +5,25 @@ demoApp.controller('DemoController', function ($scope, demoService) {
 
     function init() 
 	{
-        $scope.levels = demoService.getLevelsAndPages();
+        $scope.levels = demoService.getLevelsAndPages(); // call to load pages
+        //$scope.matchQuiz = demoService.getMatchQuiz($scope); //call to retrieve Quiz Q&A		//alert("init called");
+
+        $scope.quizQues = [
+            'Functions as an air passage to fill the ink tank.',
+            'A PCB that controls printer as a whole.',
+            'Connects the carriage and the main controller with each other by a flat cable.',
+            'A film on which slits are printed to generate an encoder pulse signal.',
+            'Relays the head signals and performs pre-processing on the multi sensor signals.',
+            'A head recovering unit that sucks the head to restore the clogged nozzles.'
+        ];
+        $scope.quizAns = [
+            'Sub-buffer',
+            'Main Controller',
+            'Carriage Relay PCB',
+            'Carriage Encoder',
+            'Head Relay PCB',
+            'Purge Unit'
+        ];
 	}
 });
 
