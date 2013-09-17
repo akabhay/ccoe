@@ -1,5 +1,3 @@
-//This handles retrieving data and is used by controllers. 
-
 demoApp.service('demoService', function () {
     this.getLevelsAndPages = function () {
         return _levels;

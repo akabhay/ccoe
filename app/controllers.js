@@ -1,5 +1,3 @@
-// This controller retrieves data from the demoService and associates it with the $scope
-
 demoApp.controller('DemoController', function ($scope, demoService) {
 	init();
 
@@ -109,4 +107,3 @@ function puzzle($scope, $timeout){
         return Math.floor(0.5 - Math.random());
     }
 }
-
