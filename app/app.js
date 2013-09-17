@@ -82,3 +82,4 @@ demoApp.directive('dropback', function($compile) {
       });
     }
   };
+ })

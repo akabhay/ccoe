@@ -1077,11 +1077,7 @@
     asNavFor: "",                   //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
 
     // Carousel Options
-<<<<<<< HEAD
-    itemWidth: 70,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
-=======
     itemWidth: 210,                   //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
->>>>>>> 8c65d3de5565508165c371db4962b97451257f69
     itemMargin: 0,                  //{NEW} Integer: Margin between carousel items.
     minItems: 1,                    //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
     maxItems: 4,                    //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
