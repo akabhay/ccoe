@@ -19,7 +19,10 @@ demoApp.service('demoService', function () {
 			{name:'Sample 4', id:'4', url:'page4'}
 
 		]},
-		{name:'Level 3', id:'3', pages:[]}
+		{name:'Level 3', id:'3', pages:[
+			{name:'Sample 1', id:'1', url:'page1'}, 
+			{name:'Sample 2', id:'2', url:'page2'}, 
+		]}
 	];
 
 });

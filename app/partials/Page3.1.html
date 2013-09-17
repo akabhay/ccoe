@@ -1,0 +1,30 @@
+<h3>Video Animation</h3>
+<script>
+  audiojs.events.ready(function() {
+    audiojs.createAll();
+  });
+
+</script>
+<div ng-controller="videoAnim" class="row" id="L3S1">
+  <span style="display:none" ><audio src="{{audioFile[0].audio}}" preload="auto" autoplay="autoplay"></audio></span>
+  <div class="span7" style="background-image: url('{{baseImage}}')">
+    <div class="videoNav" ng-show="toggleNav" ng-cloak data-ng-animate="'fade'">
+      <ul id="iconList">
+        <li data-ng-repeat="thumb in linkIcons"><a ng-click="iconAction($index)" href="javascript:;"><img ng-src="{{thumb.icon}}" alt=""></a></li>
+      </ul>
+    </div>
+    <div class="comparison iphone" ng-show="toggleComparison" ng-cloak data-ng-animate="'fade'">
+      <div class="">
+        <h6>2G Connection</h6>
+        <img ng-src="{{anim1}}" alt="">
+        <button type="button" class="btn btn-notify" ng-show="toggle" data-ng-animate="'fade'">{{result1}}</button>
+      </div>
+      <div class="">
+        <h6>3G Connection</h6>
+        <img ng-src="{{anim2}}" alt="">
+        <button type="button" class="btn btn-notify" ng-show="toggle" data-ng-animate="'fade'">{{result2}}</button>
+      </div>
+    </div>
+  </div>
+  <div data-ng-repeat="comp in linkIcons"><img src="{{comp.anim1}}" alt="" ng-show="never"></div>
+</div>

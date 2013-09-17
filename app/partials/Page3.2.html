@@ -1,0 +1,18 @@
+<p>&nbsp;</p>
+<div ng-controller="puzzle" id="puzzle">
+  <div class="row">
+    <div class="span7">
+      <ul id="blockDrop" style="height:{{((initPuzzle/2)*198)-((initPuzzle)*28)}}px">
+        <li data-ng-repeat="block in blocks"><div class="dropPlace block{{$index}}" droppable><img ng-src="{{block}}" alt=""></div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row message"><div class="span7"><p class="text-center">Drag the follow pieces to the above area</p></div></div>
+  <div class="row">
+    <div class="span7">
+      <ul id="blocks" dropback>
+        <li data-ng-repeat="block in blocks"><div draggable class="dropContainer"><img ng-src="{{block}}" alt="" class="block{{$index}}"><span>{{blockText[$index]}}</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
