@@ -1,18 +1,18 @@
 <p>&nbsp;</p>
 <div ng-controller="puzzle" id="puzzle">
   <div class="row">
-    <div class="span10">
+    <div class="span5">
       <ul id="blockDrop" style="height:{{((initPuzzle/2)*198)-((initPuzzle)*28)}}px">
         <li data-ng-repeat="block in blocks|limitTo:initPuzzle"><div class="dropPlace block{{$index}}" droppable><img ng-src="{{block}}" alt=""></div></li>
       </ul>
     </div>
-  </div>
-  <div class="row message"><div class="span10"><p class="text-center">Drag the follow pieces to the above area</p></div></div>
-  <div class="row">
-    <div class="span10">
-      <ul id="blocks" dropback>
-        <li data-ng-repeat="block in blocks"><div draggable class="dropContainer"><img ng-src="{{block}}" alt="" class="block{{$index}}"><span>{{blockText[$index]}}</span></div></li>
+
+    <div class="span5 mobileRow">
+      <p class="text-center message">Drag the follow pieces to the above area</p>
+      <ul id="blocks" dropback my-main-directive>
+        <li data-ng-repeat="block in blocks" my-repeat-directive><div draggable class="dropContainer"><img ng-src="{{block}}" alt="" class="block{{$index}}"><span>{{blockText[$index]}}</span></div></li>
       </ul>
+      <div class="alert alert-success hide" id="success"><h4>You have completed the puzzle</h4></div>
     </div>
   </div>
 </div>

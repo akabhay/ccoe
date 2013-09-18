@@ -24,9 +24,53 @@ demoApp.service('demoService', function () {
 	];
 
 });
-demoApp.filter('shuffle', function() {
-    return function(o){
-           for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
+/*
+(function($){
+  $.fn.shuffle = function() {
+    return this.each(function(){
+      var items = $(this).children();
+      return $(this).html(items);
+      return (items.length) 
+        ? $(this).html($.shuffle(items)) 
+        : this;
+    });
+  }
+	
+  $.shuffle = function(arr) {
+    for(
+      var j, x, i = arr.length; i; 
+      j = parseInt(Math.random() * i), 
+      x = arr[--i], arr[i] = arr[j], arr[j] = x
+    );
+    return arr;
+  }	
+})(jQuery);
+
+$.fn.randomize = function(selector){
+    var $elems = selector ? $(this).find(selector) : $(this).children(),
+        $parents = $elems.parent();
+
+    $parents.each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        }).remove().appendTo(this);
+    });
+
+    return this;
+};
+demoApp.directive('myRepeatDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      scope.$emit('LastElem');
     }
-});
+  };
+})
+.directive('myMainDirective', function($timeout){
+  return function(scope, element, attrs) {
+    scope.$on('LastElem', function(event){
+    	$timeout(function(){
+    		//$("#blocks").shuffle();
+    	});
+    });
+  };
+});*/

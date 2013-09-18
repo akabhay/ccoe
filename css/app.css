@@ -92,11 +92,10 @@ display: table; width: 284px; position: relative; height: 566px;
 #blockDrop .dropPlace .dropped img{ opacity: 1}
 #blocks{ display: table; margin: auto;}
 #blocks li{ float: left; margin-right: 5px;}
-#blocks li img{ max-height: 50%; }
-
+#blocks li img{ max-height: 40%; }
 
 @media screen and (max-width: 600px) {
-  #blockDrop, #blocks{ zoom: 75% };
+  #blockDrop, #blocks{ zoom: 65% };
 }
 
 

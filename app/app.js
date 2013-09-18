@@ -52,11 +52,13 @@ demoApp.directive('droppable', function($compile) {
         	var currClass = $(ui.draggable).children("img").attr("class");
         	if($(this).hasClass(currClass)){
 				ui.draggable.appendTo($(this));
-				//ui.draggable.css('width', '95%');
 				ui.draggable.addClass('dropped');
-				if($(".dropped").length == ($(".dropContainer").length)-1){ // All Droppped
+				console.log($(".dropped").length +" == "+ ($(".dropPlace").length))
+				if($(".dropped").length == ($(".dropPlace").length)){ // All Droppped
 					console.log("All Dropped");
-					$(".message").hide();
+					$("#blocks").fadeOut();
+					$(".message").fadeOut();
+					$("#success").show();
 				}
 			}else{
 
@@ -83,3 +85,6 @@ demoApp.directive('dropback', function($compile) {
     }
   };
  })
+
+
+
