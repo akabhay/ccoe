@@ -92,13 +92,14 @@ function videoAnim($scope, $timeout){
 
 function puzzle($scope, $timeout){
     var initPuzzle = 6;
+    var invalidSlides = 2;
     $scope.initPuzzle = initPuzzle;
 
-    $scope.blockText = ["A","B","C","D","E","F"];
+    $scope.blockText = ["A","B","C","D","E","F","P", "N"];
 
     ///////////////////////////////////////////////////////
     var blocks = [];
-    for(var i=1;i<=initPuzzle;i++) {
+    for(var i=1;i<=(initPuzzle+invalidSlides);i++) {
       blocks.push("img/puzzle/"+initPuzzle+"/"+i+".png");
     }
     $scope.blocks = blocks;
@@ -107,3 +108,4 @@ function puzzle($scope, $timeout){
         return Math.floor(0.5 - Math.random());
     }
 }
+
