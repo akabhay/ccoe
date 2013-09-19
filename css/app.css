@@ -85,7 +85,7 @@ display: table; width: 284px; position: relative; height: 566px;
 #blockDrop li:nth-child(5n){top: 256px;}
 #blockDrop li:nth-child(6n){top: 256px; left: 114px;}
 
-#blockDrop li img{ opacity: 0.2;}
+#blockDrop li img{ opacity: 0.2; max-width: initial;}
 .dropPlace, .dropContainer{ position: relative;}
 .dropContainer span{ position: absolute; top: 20%; left: 20%;}
 #blockDrop .dropPlace .dropped{ opacity: 1; position: absolute; z-index: 1; top: 0px; left: 0px;}

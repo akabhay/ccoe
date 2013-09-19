@@ -91,12 +91,21 @@ function videoAnim($scope, $timeout){
 
 
 function puzzle($scope, $timeout){
-    var initPuzzle = 6;
+    var initPuzzle = 5; // Available options are 4/5/6
+    ///////////////////////////////////////////////////////
+    var oddAdd = 0;
+    var height = 0;
     var invalidSlides = 2;
     $scope.initPuzzle = initPuzzle;
 
     $scope.blockText = ["A","B","C","D","E","F","P", "N"];
-
+    if(initPuzzle % 2){
+        oddAdd = 1;
+        height=(((initPuzzle+oddAdd)/2)*198)-((initPuzzle+oddAdd)*28);
+    }else{
+        height=((initPuzzle/2)*198)-(initPuzzle*28);
+    }
+    $scope.height = height;
     ///////////////////////////////////////////////////////
     var blocks = [];
     for(var i=1;i<=(initPuzzle+invalidSlides);i++) {

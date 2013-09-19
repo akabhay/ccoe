@@ -2,7 +2,7 @@
 <div ng-controller="puzzle" id="puzzle">
   <div class="row">
     <div class="span5">
-      <ul id="blockDrop" style="height:{{((initPuzzle/2)*198)-((initPuzzle)*28)}}px">
+      <ul id="blockDrop" style="height:{{height}}px">
         <li data-ng-repeat="block in blocks|limitTo:initPuzzle"><div class="dropPlace block{{$index}}" droppable><img ng-src="{{block}}" alt=""></div></li>
       </ul>
     </div>
