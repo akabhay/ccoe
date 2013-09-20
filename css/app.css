@@ -88,15 +88,15 @@ display: table; width: 284px; position: relative; height: 566px;
 
 #blockDrop li img{ opacity: 0.2; max-width: initial;}
 .dropPlace, .dropContainer{ position: relative;}
-.dropContainer span{ position: absolute; top: 20%; left: 20%;}
+.dropContainer span{ position: absolute; top: 30%; left: 20%; font-size: 12px; width: 50%; display: inline-block;}
 #blockDrop .dropPlace .dropped{ opacity: 1; position: absolute; z-index: 1; top: 0px; left: 0px;}
 #blockDrop .dropPlace .dropped img{ opacity: 1}
 #blocks{ display: table; margin: auto;}
-#blocks li{ float: left; margin-right: 5px;}
-#blocks li img{ max-height: 40%; }
+#blocks li{ float: left; margin-right: 5px; width: 140px;}
+#blocks li img{ max-height: initial; }
 
 @media screen and (max-width: 600px) {
-  #blockDrop, #blocks{ zoom: 65% };
+  #blockDrop, #blocks{ zoom: 60%; }
 }
 
 

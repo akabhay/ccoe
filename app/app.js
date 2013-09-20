@@ -50,7 +50,7 @@ demoApp.directive('droppable', function($compile) {
         drop:function(event,ui) {
         	var currClass = $(ui.draggable).children("img").attr("class");
         	if($(this).hasClass(currClass)){
-        		$(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
+        		$(ui.draggable).css({top: 0,left: 0}).appendTo(this);
 				//ui.draggable.appendTo($(this));
 				ui.draggable.addClass('dropped');
 				console.log($(".dropped").length +" == "+ ($(".dropPlace").length))

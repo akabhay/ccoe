@@ -98,7 +98,7 @@ function puzzle($scope, $timeout){
     var invalidSlides = 2;
     $scope.initPuzzle = initPuzzle;
 
-    $scope.blockText = ["A","B","C","D","E","F","P", "N"];
+    $scope.blockText = ["Staff Engagement","Profit Driven","Honesty & Fairness","Customer Driven","Customer Engagement","Simplicity & Excellence","Corporate Citizenship", "Other"];
     if(initPuzzle % 2){
         oddAdd = 1;
         height=(((initPuzzle+oddAdd)/2)*198)-((initPuzzle+oddAdd)*28);
