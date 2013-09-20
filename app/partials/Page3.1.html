@@ -3,7 +3,6 @@
   audiojs.events.ready(function() {
     audiojs.createAll();
   });
-
 </script>
 <div ng-controller="videoAnim" class="row" id="L3S1">
   <span style="display:none" ><audio src="{{audioFile[0].audio}}" preload="auto" autoplay="autoplay"></audio></span>
@@ -28,3 +27,9 @@
   </div>
   <div data-ng-repeat="comp in linkIcons"><img src="{{comp.anim1}}" alt="" ng-show="never"></div>
 </div>
+<script type="text/javascript">
+var played = false;
+document.addEventListener('touchstart', function () {
+    if(!played){document.getElementsByTagName('audio')[0].play(); played=true;}
+});
+</script>
