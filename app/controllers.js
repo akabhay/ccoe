@@ -52,16 +52,16 @@ function videoAnim($scope, $timeout){
     $scope.audioFile = [{audio:"img/videoanim/welcome.mp3", duration:"3000"}];
 
     $scope.linkIcons = [{icon:"img/videoanim/image3.png", // Icon Image
-                        anim1:"img/videoanim/icon01a2.gif", anim2:"img/videoanim/icon01a1.gif", // Comparison Images
-                        anim1text:"Create new blog: 37s", anim2text:"Create new blog: 7s"},  // Comparison Text
+                        anim1:"img/videoanim/icon02a2.gif", anim2:"img/videoanim/icon02a1.gif", // Comparison Images
+                        anim1text:"Visiting a blog: 23s", anim2text:"Visiting a blog:  5s"},  // Comparison Text
 
                         {icon:"img/videoanim/image6.png", // Icon Image
                         anim1:"img/videoanim/icon01a2.gif", anim2:"img/videoanim/icon01a1.gif", // Comparison Images
-                        anim1text:"Create new blog: 37s", anim2text:"Create new blog: 7s"},  // Comparison Text
+                        anim1text:"Playing video: 37s", anim2text:"Playing video: 7s"}  // Comparison Text
 
                         {icon:"img/videoanim/image9.png", // Icon Image
-                        anim1:"img/videoanim/icon01a2.gif", anim2:"img/videoanim/icon01a1.gif", // Comparison Images
-                        anim1text:"Create new blog: 37s", anim2text:"Create new blog: 7s"}  // Comparison Text
+                        anim1:"img/videoanim/icon03a2.gif", anim2:"img/videoanim/icon03a1.gif", // Comparison Images
+                        anim1text:"Playing music: 37s", anim2text:"Playing music: 7s"}  // Comparison Text
                         ];
 
     var icons = [];
