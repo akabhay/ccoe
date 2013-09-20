@@ -33,7 +33,6 @@ demoApp.directive('draggable', function() {
 	          $(this).show();
 	          $(ui.helper).removeClass('elHoverClass');
 	      },
-	      appendTo: 'body',
 	      scroll: false,
 	      helper: 'clone',
 	      cursor: "move"
@@ -51,7 +50,8 @@ demoApp.directive('droppable', function($compile) {
         drop:function(event,ui) {
         	var currClass = $(ui.draggable).children("img").attr("class");
         	if($(this).hasClass(currClass)){
-				ui.draggable.appendTo($(this));
+        		$(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
+				//ui.draggable.appendTo($(this));
 				ui.draggable.addClass('dropped');
 				console.log($(".dropped").length +" == "+ ($(".dropPlace").length))
 				if($(".dropped").length == ($(".dropPlace").length)){ // All Droppped
