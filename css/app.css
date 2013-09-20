@@ -97,6 +97,7 @@ display: table; width: 284px; position: relative; height: 566px;
 
 @media screen and (max-width: 600px) {
   #blockDrop, #blocks{ zoom: 60%; }
+  .dropContainer span{ width: 50%; font-size: 11px} 
 }
 
 
