@@ -33,7 +33,6 @@ demoApp.directive('draggable', function() {
 	          $(this).show();
 	          $(ui.helper).removeClass('elHoverClass');
 	      },
-	      scroll: false,
 	      helper: 'clone',
 	      cursor: "move"
       });
@@ -77,7 +76,7 @@ demoApp.directive('dropback', function($compile) {
       element.droppable({
         drop:function(event,ui) {
 			ui.draggable.removeAttr('style').prependTo($(this));
-			ui.draggable.css('max-height', '55%');
+			ui.draggable.css('max-height', 'initial');
 			ui.draggable.wrap('<li>');
 			ui.draggable.removeClass('dropped');
         }

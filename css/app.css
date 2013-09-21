@@ -96,7 +96,10 @@ display: table; width: 284px; position: relative; height: 566px;
 #blocks li img{ max-height: initial; }
 
 @media screen and (max-width: 600px) {
-  #blockDrop, #blocks{ zoom: 60%; }
+  body{zoom: 100%;}
+  #puzzle{ zoom: 60%; }
+  #blockDrop li{ }
+  #blocks li{  }
   .dropContainer span{ width: 50%; font-size: 11px} 
 }
 
