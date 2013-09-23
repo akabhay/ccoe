@@ -57,7 +57,7 @@ function videoAnim($scope, $timeout){
 
                         {icon:"img/videoanim/image6.png", // Icon Image
                         anim1:"img/videoanim/icon01a2.gif", anim2:"img/videoanim/icon01a1.gif", // Comparison Images
-                        anim1text:"Playing video: 37s", anim2text:"Playing video: 7s"},  // Comparison Text
+                        anim1text:"Playing video: 51s", anim2text:"Playing video: 12s"},  // Comparison Text
 
                         {icon:"img/videoanim/image9.png", // Icon Image
                         anim1:"img/videoanim/icon03a2.gif", anim2:"img/videoanim/icon03a1.gif", // Comparison Images
@@ -98,7 +98,7 @@ function puzzle($scope, $timeout){
     var invalidSlides = 2;
     $scope.initPuzzle = initPuzzle;
 
-    $scope.blockText = ["Staff Engagement","Profit Driven","Honesty & Fairness","Customer Driven","Customer Engagement","Simplicity & Excellence","Corporate Citizenship", "Other"];
+    $scope.blockText = ["Staff Engagement","Honesty & Fairness","Customer Driven","Simplicity & Excellence","Corporate Citizenship","Profit Driven","Customer Engagement", "Result Oriented"];
     if(initPuzzle % 2){
         oddAdd = 1;
         height=(((initPuzzle+oddAdd)/2)*198)-((initPuzzle+oddAdd)*28);
