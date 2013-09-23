@@ -45,20 +45,21 @@ function animation2($scope,$timeout) {
 
 function videoAnim($scope, $timeout){
     $scope.baseImage = "img/videoanim/computing.jpg"; // Default background image
-    $scope.anim1 =  "img/videoanim/iphone.png"; // Default animation 1 image
-    $scope.anim2 =  "img/videoanim/iphone.png"; // Default animation 2 image
+    $scope.anim1 =  "img/videoanim/iphone.png"; // Default comparison background animation 1 image
+    $scope.anim2 =  "img/videoanim/iphone.png"; // Default comparison background animation 2 image
     $scope.audioFile = [{audio:"img/videoanim/welcome.mp3", duration:"3000"}];
 
     // Calling animation icons and comparison graphics using array
-    $scope.linkIcons = [{icon:"img/videoanim/image3.png", // Icon Image
+	// This data would be retrieved via services
+    $scope.linkIcons = [{icon:"img/videoanim/image3.png", // Icon Image 1
                         anim1:"img/videoanim/icon02a2.gif", anim2:"img/videoanim/icon02a1.gif", // Comparison Images
                         anim1text:"Visiting a blog: 23s", anim2text:"Visiting a blog:  5s"},  // Comparison Text
 
-                        {icon:"img/videoanim/image6.png", // Icon Image
+                        {icon:"img/videoanim/image6.png", // Icon Image 2
                         anim1:"img/videoanim/icon01a2.gif", anim2:"img/videoanim/icon01a1.gif", // Comparison Images
                         anim1text:"Playing video: 51s", anim2text:"Playing video: 12s"},  // Comparison Text
 
-                        {icon:"img/videoanim/image9.png", // Icon Image
+                        {icon:"img/videoanim/image9.png", // Icon Image 3
                         anim1:"img/videoanim/icon03a2.gif", anim2:"img/videoanim/icon03a1.gif", // Comparison Images
                         anim1text:"Playing music: 37s", anim2text:"Playing music: 7s"}  // Comparison Text
                         ];
