@@ -1,6 +1,5 @@
 demoApp.controller('DemoController', function ($scope, demoService) {
 	init();
-
     function init() 
 	{
         $scope.levels = demoService.getLevelsAndPages();
@@ -11,31 +10,30 @@ function animation($scope,$timeout) {
 	$scope.anim1Start = function(){
         //alert("Animation Start")
     	jQuery("#anim1").append("<img src='img/anim1.gif?p"+new Date().getTime()+"'/>");
-    	$timeout($scope.anim1Over, 4000);
+    	$timeout($scope.anim1Over, 4000); // Stop animation after 4 seconds
     }
     $scope.anim1Over = function(){
     	jQuery("#anim2Link").show();
     }
-    $timeout($scope.anim1Start, 2000); // start animation after 5 seconds
+    $timeout($scope.anim1Start, 2000); // Start animation after 2 seconds
     
     $scope.anim2Link = function(){
     	jQuery("#anim2Link").hide();
     	jQuery("#anim1").hide();
 		jQuery("#anim2").append("<img src='img/anim2.gif?p"+new Date().getTime()+"'/>");
     	jQuery("#anim2").show();
-        //$timeout.cancel(mytimeout);
     }         
 }
 
 function animation2($scope,$timeout) {
 	$scope.anim1Start = function(){
     	jQuery("#anim1").append("<img src='img/anim1.gif?p"+new Date().getTime()+"'/>");
-    	$timeout($scope.anim1Over, 4000);
+    	$timeout($scope.anim1Over, 4000); // Stop animation after 4 seconds
     }
     $scope.anim1Over = function(){
     	jQuery("#anim2Link").show();
     }
-    $timeout($scope.anim1Start, 2000); // start animation after 5 seconds
+    $timeout($scope.anim1Start, 2000); // Start animation after 2 seconds
     
     $scope.anim2Link = function(){
     	jQuery("#anim2Link").hide();
@@ -46,11 +44,12 @@ function animation2($scope,$timeout) {
 
 
 function videoAnim($scope, $timeout){
-    $scope.baseImage = "img/videoanim/computing.jpg";
+    $scope.baseImage = "img/videoanim/computing.jpg"; // Default background image
     $scope.anim1 =  "img/videoanim/iphone.png"; // Default animation 1 image
     $scope.anim2 =  "img/videoanim/iphone.png"; // Default animation 2 image
     $scope.audioFile = [{audio:"img/videoanim/welcome.mp3", duration:"3000"}];
 
+    // Calling animation icons and comparison graphics using array
     $scope.linkIcons = [{icon:"img/videoanim/image3.png", // Icon Image
                         anim1:"img/videoanim/icon02a2.gif", anim2:"img/videoanim/icon02a1.gif", // Comparison Images
                         anim1text:"Visiting a blog: 23s", anim2text:"Visiting a blog:  5s"},  // Comparison Text
@@ -90,7 +89,7 @@ function videoAnim($scope, $timeout){
 }
 
 
-function puzzle($scope, $timeout){
+function puzzleCtrl($scope, $timeout){
     var initPuzzle = 5; // Available options are 4/5/6
     ///////////////////////////////////////////////////////
     var oddAdd = 0;
@@ -98,7 +97,9 @@ function puzzle($scope, $timeout){
     var invalidSlides = 2;
     $scope.initPuzzle = initPuzzle;
 
+    // Calling text for puzzle blocks
     $scope.blockText = ["Staff Engagement","Honesty & Fairness","Customer Driven","Simplicity & Excellence","Corporate Citizenship","Profit Driven","Customer Engagement", "Result Oriented"];
+    // Puzzle graphics called using the dir in img/puzzle/{initPuzzle}/
     if(initPuzzle % 2){
         oddAdd = 1;
         height=(((initPuzzle+oddAdd)/2)*198)-((initPuzzle+oddAdd)*28);

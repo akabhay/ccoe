@@ -2,8 +2,7 @@ demoApp.service('demoService', function () {
     this.getLevelsAndPages = function () {
         return _levels;
     };
-
-	//Currently hardcoded
+	//Currently hardcoded // Menu Levels
 	var _levels = [
 		{name:'Level 1', id:'1', pages:[
 			{name:'Sample 1', id:'1', url:'page1'}, 
@@ -22,55 +21,4 @@ demoApp.service('demoService', function () {
 			{name:'Sample 2', id:'2', url:'page2'}, 
 		]}
 	];
-
 });
-/*
-(function($){
-  $.fn.shuffle = function() {
-    return this.each(function(){
-      var items = $(this).children();
-      return $(this).html(items);
-      return (items.length) 
-        ? $(this).html($.shuffle(items)) 
-        : this;
-    });
-  }
-	
-  $.shuffle = function(arr) {
-    for(
-      var j, x, i = arr.length; i; 
-      j = parseInt(Math.random() * i), 
-      x = arr[--i], arr[i] = arr[j], arr[j] = x
-    );
-    return arr;
-  }	
-})(jQuery);
-
-$.fn.randomize = function(selector){
-    var $elems = selector ? $(this).find(selector) : $(this).children(),
-        $parents = $elems.parent();
-
-    $parents.each(function(){
-        $(this).children(selector).sort(function(){
-            return Math.round(Math.random()) - 0.5;
-        }).remove().appendTo(this);
-    });
-
-    return this;
-};
-demoApp.directive('myRepeatDirective', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last){
-      scope.$emit('LastElem');
-    }
-  };
-})
-.directive('myMainDirective', function($timeout){
-  return function(scope, element, attrs) {
-    scope.$on('LastElem', function(event){
-    	$timeout(function(){
-    		//$("#blocks").shuffle();
-    	});
-    });
-  };
-});*/

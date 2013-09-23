@@ -28,6 +28,7 @@
   <div data-ng-repeat="comp in linkIcons"><img src="{{comp.anim1}}" alt="" ng-show="never"></div>
 </div>
 <script type="text/javascript">
+// HTML5 audio play fix for mobile and tablet devices
 var played = false;
 document.addEventListener('touchstart', function () {
     if(!played){document.getElementsByTagName('audio')[0].play(); played=true;}
